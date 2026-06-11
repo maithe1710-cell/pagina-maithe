@@ -12,14 +12,12 @@
             font-family: Arial, sans-serif;
         }
 
-        /* 🔒 Página principal SIN desplazamiento */
         body {
             height: 100vh;
-            overflow: hidden; /* Bloquea el scroll de toda la página */
+            overflow: hidden;
             background-color: #f0f2f5;
         }
 
-        /* 🎨 Encabezado con logo */
         header {
             background-color: #1877f2;
             padding: 1rem;
@@ -37,7 +35,6 @@
             border-radius: 8px;
         }
 
-        /* 📋 Menú de 4 pestañas */
         nav {
             background-color: #165dbb;
         }
@@ -58,13 +55,11 @@
             background-color: #0d47a1;
         }
 
-        /* 📑 Contenedor de contenido */
         .contenedor {
             height: calc(100vh - 140px);
             position: relative;
         }
 
-        /* ✨ Cada pestaña CON su propio desplazamiento */
         .pestaña {
             position: absolute;
             top: 0;
@@ -73,7 +68,7 @@
             height: 100%;
             padding: 2rem;
             background-color: white;
-            overflow-y: auto; /* Solo aquí aparece el scroll */
+            overflow-y: auto;
             display: none;
         }
 
@@ -81,7 +76,6 @@
             display: block;
         }
 
-        /* Estilos del contenido */
         .pestaña h2 {
             color: #1877f2;
             margin-bottom: 1rem;
@@ -104,13 +98,11 @@
     </style>
 </head>
 <body>
-    <!-- 🖼️ Logo en la parte superior izquierda -->
     <header>
-        <img src="logo.png" alt="Logo Redes Sociales" class="logo">
+        <img src="WhatsApp Image 2026-06-11 at 10.24.03 AM.jpeg" alt="Logo Redes Sociales" class="logo">
         <h1>Redes Sociales</h1>
     </header>
 
-    <!-- 📋 Menú con 4 pestañas -->
     <nav>
         <ul class="menu">
             <li class="activa" data-pestaña="que-es">¿Qué son?</li>
@@ -120,7 +112,6 @@
         </ul>
     </nav>
 
-    <!-- 📄 Contenido de cada pestaña -->
     <div class="contenedor">
         <div class="pestaña activa" id="que-es">
             <h2>¿Qué son las redes sociales?</h2>
@@ -190,18 +181,15 @@
         </div>
     </div>
 
-    <!-- ⚡ Funcionalidad del menú -->
     <script>
         const botonesMenu = document.querySelectorAll('.menu li');
         const secciones = document.querySelectorAll('.pestaña');
 
         botonesMenu.forEach(boton => {
             boton.addEventListener('click', () => {
-                // Quitar estado activo
                 botonesMenu.forEach(b => b.classList.remove('activa'));
                 secciones.forEach(s => s.classList.remove('activa'));
                 
-                // Activar la sección seleccionada
                 boton.classList.add('activa');
                 const idSeccion = boton.getAttribute('data-pestaña');
                 document.getElementById(idSeccion).classList.add('activa');
