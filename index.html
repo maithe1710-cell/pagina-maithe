@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes Sociales</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 🔒 Página principal SIN desplazamiento */
+        body {
+            height: 100vh;
+            overflow: hidden; /* Bloquea el scroll de toda la página */
+            background-color: #f0f2f5;
+        }
+
+        /* 🎨 Encabezado con logo */
+        header {
+            background-color: #1877f2;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+            background-color: white;
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        /* 📋 Menú de 4 pestañas */
+        nav {
+            background-color: #165dbb;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu li {
+            padding: 1rem 2rem;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .menu li:hover, .menu li.activa {
+            background-color: #0d47a1;
+        }
+
+        /* 📑 Contenedor de contenido */
+        .contenedor {
+            height: calc(100vh - 140px);
+            position: relative;
+        }
+
+        /* ✨ Cada pestaña CON su propio desplazamiento */
+        .pestaña {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+            background-color: white;
+            overflow-y: auto; /* Solo aquí aparece el scroll */
+            display: none;
+        }
+
+        .pestaña.activa {
+            display: block;
+        }
+
+        /* Estilos del contenido */
+        .pestaña h2 {
+            color: #1877f2;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #1877f2;
+            padding-bottom: 0.5rem;
+        }
+
+        .pestaña p {
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            text-align: justify;
+            color: #333;
+        }
+
+        .pestaña ul {
+            margin: 1rem 0 1rem 2rem;
+            line-height: 1.8;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- 🖼️ Logo en la parte superior izquierda -->
+    <header>
+        <img src="logo.png" alt="Logo Redes Sociales" class="logo">
+        <h1>Redes Sociales</h1>
+    </header>
+
+    <!-- 📋 Menú con 4 pestañas -->
+    <nav>
+        <ul class="menu">
+            <li class="activa" data-pestaña="que-es">¿Qué son?</li>
+            <li data-pestaña="tipos">Tipos principales</li>
+            <li data-pestaña="ventajas">Ventajas y desventajas</li>
+            <li data-pestaña="uso">Uso responsable</li>
+        </ul>
+    </nav>
+
+    <!-- 📄 Contenido de cada pestaña -->
+    <div class="contenedor">
+        <div class="pestaña activa" id="que-es">
+            <h2>¿Qué son las redes sociales?</h2>
+            <p>Las redes sociales son plataformas digitales formadas por comunidades de individuos con intereses, actividades o relaciones en común. Permiten el contacto entre personas de forma inmediata, compartir información, contenido multimedia y crear vínculos sin importar la distancia geográfica.</p>
+            
+            <p>Se definen como estructuras formadas en Internet por personas u organizaciones que se conectan a partir de intereses o valores comunes. A través de ellas, se crean relaciones entre individuos de manera rápida y sencilla, sin barreras físicas.</p>
+            
+            <p>Su origen se remonta a finales de los años 90, pero su auge masivo comenzó en la década de 2000 con la aparición de plataformas como Friendster, MySpace y posteriormente Facebook, que transformaron la forma en que nos comunicamos.</p>
+            
+            <p>Hoy en día forman parte esencial de la vida cotidiana: sirven para comunicarse, informarse, trabajar, estudiar, entretenerse y promover negocios o causas sociales.</p>
+        </div>
+
+        <div class="pestaña" id="tipos">
+            <h2>Tipos principales de redes sociales</h2>
+            <p>Existen diferentes clasificaciones según su función y el tipo de contenido que comparten:</p>
+            
+            <ul>
+                <li><strong>De relaciones personales:</strong> Diseñadas para conectar con amigos, familiares y conocidos. Ejemplos: Facebook, Instagram.</li>
+                <li><strong>Profesionales:</strong> Orientadas a contactos laborales, empleo y negocios. Ejemplo: LinkedIn.</li>
+                <li><strong>De contenido multimedia:</strong> Enfocadas en compartir videos, imágenes o audios. Ejemplos: YouTube, TikTok, Pinterest.</li>
+                <li><strong>De mensajería instantánea:</strong> Para comunicación directa y privada. Ejemplos: WhatsApp, Telegram.</li>
+                <li><strong>Microblogging:</strong> Para compartir mensajes cortos y noticias rápidas. Ejemplo: X (antes Twitter).</li>
+                <li><strong>Foros y comunidades:</strong> Para debatir temas específicos de interés común. Ejemplo: Reddit.</li>
+            </ul>
+            
+            <p>Cada una tiene características particulares y se adapta a diferentes necesidades, por lo que es común que las personas utilicen varias de ellas al mismo tiempo.</p>
+        </div>
+
+        <div class="pestaña" id="ventajas">
+            <h2>Ventajas y desventajas</h2>
+            
+            <h3>✅ Ventajas</h3>
+            <ul>
+                <li>Comunicación inmediata y gratuita con personas de todo el mundo</li>
+                <li>Acceso rápido a información y noticias actualizadas</li>
+                <li>Herramientas para el aprendizaje, la educación y el trabajo colaborativo</li>
+                <li>Oportunidades para emprender, promocionar productos o encontrar empleo</li>
+                <li>Creación de comunidades de apoyo y ayuda mutua</li>
+                <li>Entretenimiento y expresión creativa</li>
+            </ul>
+
+            <h3>❌ Desventajas</h3>
+            <ul>
+                <li>Riesgo de adicción y pérdida de tiempo productivo</li>
+                <li>Difusión de noticias falsas o desinformación</li>
+                <li>Problemas de privacidad y robo de datos personales</li>
+                <li>Ciberacoso, ciberbullying y conductas agresivas</li>
+                <li>Comparación social y baja autoestima por contenido idealizado</li>
+                <li>Exposición a contenido inapropiado para menores de edad</li>
+            </ul>
+        </div>
+
+        <div class="pestaña" id="uso">
+            <h2>Uso responsable y seguro</h2>
+            <p>Para aprovechar los beneficios de las redes sociales sin sufrir sus riesgos, es importante seguir algunas recomendaciones:</p>
+            
+            <ul>
+                <li><strong>Cuida tu privacidad:</strong> Configura tus cuentas para que solo personas de confianza vean tu información y no compartas datos sensibles como dirección, teléfono o contraseñas.</li>
+                <li><strong>Verifica la información:</strong> Antes de compartir una noticia, asegúrate de que venga de fuentes confiables para no difundir mentiras.</li>
+                <li><strong>Respeta a los demás:</strong> Evita comentarios ofensivos, discriminatorios o agresivos. Recuerda que detrás de cada cuenta hay una persona real.</li>
+                <li><strong>Controla el tiempo de uso:</strong> Establece horarios para conectarte y no dejes que interfiera con tus estudios, trabajo o descanso.</li>
+                <li><strong>Piensa antes de publicar:</strong> Todo lo que subes a Internet puede quedar registrado por mucho tiempo y afectar tu reputación.</li>
+                <li><strong>Denuncia conductas maliciosas:</strong> Si ves acoso, contenido peligroso o estafas, utiliza las herramientas de denuncia de la plataforma.</li>
+            </ul>
+            
+            <p>El uso responsable convierte a las redes sociales en una herramienta muy valiosa para el desarrollo personal y colectivo.</p>
+        </div>
+    </div>
+
+    <!-- ⚡ Funcionalidad del menú -->
+    <script>
+        const botonesMenu = document.querySelectorAll('.menu li');
+        const secciones = document.querySelectorAll('.pestaña');
+
+        botonesMenu.forEach(boton => {
+            boton.addEventListener('click', () => {
+                // Quitar estado activo
+                botonesMenu.forEach(b => b.classList.remove('activa'));
+                secciones.forEach(s => s.classList.remove('activa'));
+                
+                // Activar la sección seleccionada
+                boton.classList.add('activa');
+                const idSeccion = boton.getAttribute('data-pestaña');
+                document.getElementById(idSeccion).classList.add('activa');
+            });
+        });
+    </script>
+</body>
+</html>
